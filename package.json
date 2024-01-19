@@ -1,0 +1,11 @@
+{
+  "name": "project_apex",
+  "version": "1.0.0",
+  "description": "Automation Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "Mirlanda Costa",
+  "license": "ISC"
+}
