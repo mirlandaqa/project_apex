@@ -10,9 +10,11 @@ describe('home', () => {
 
   it('Update order 10 to quantity 20', () => {
     cy.get('#C63898803422352561850_HDR').click()
-    cy.get('[placeholder="Filter..."]').type('10').click()
+    cy.wait(500)
+    cy.get('[placeholder="Filter..."]').type('10')
     cy.wait(500)
     cy.contains('10').click()
+    cy.wait(500)
     cy.get('[data-id="10"]').find('td:contains(Grapes)').next().dblclick({force:true})
     cy.get('[data-id="10"]').find('td:contains(Grapes)').next().type('10')
     cy.contains('Save').click()
@@ -21,17 +23,15 @@ describe('home', () => {
 
   it('Update the location of order 10 to Deli', () => {
     cy.get('#C63898803422352561850_HDR').click()
-    cy.get('[placeholder="Filter..."]').type('10').click()
     cy.wait(500)
-    cy.contains('10').click()
+    cy.get('[placeholder="Filter..."]').type('10')
+    cy.wait(500)
+    cy.contains('10').dblclick()
+    cy.scrollTo('bottom')
     cy.wait(500)
     cy.get('[data-id="10"]').find('td:contains(Grapes)').next().dblclick({force:true})
     cy.get('#C63898803169968561847_lov_btn').dblclick({force:true}) 
     cy.get('ul').find('li:contains(Acme Store)').click()
     cy.contains('Save').click()
-
   })
-
-
-
 })
