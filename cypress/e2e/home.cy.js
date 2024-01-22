@@ -21,7 +21,7 @@ describe('home', () => {
  
   })
 
-  it('Update the location of order 10 to Deli', () => {
+  it('Update the location of order 10 to Acme Store', () => {
     cy.get('#C63898803422352561850_HDR').click()
     cy.wait(500)
     cy.get('[placeholder="Filter..."]').type('10')
